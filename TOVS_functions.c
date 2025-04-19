@@ -548,7 +548,7 @@ void TOVS(){
     while (1) {
         display_TnOVS_Menu(choice); // Display the menu
         key = getch(); // Read user input for menu navigation
-
+        int reckey ,reckey2,reckey3 , Blocknum; // Variables to hold record keys for operations;
         if (key == 224) {
             key = getch(); // Capture special keys like arrow keys
             switch (key) {
@@ -592,7 +592,7 @@ void TOVS(){
                     insertRecord_TOVS(tovsFile , rec); // Insert the new record
                     break;
                 case 2:
-                    int reckey ;
+                    
                     system("cls");
                     printCentered("Enter the key of the record that you want to logically delete : \n");
                     printf("\033[1A\033[63C"); 
@@ -600,7 +600,6 @@ void TOVS(){
                     logicalDelete_TOVS(tovsFile ,reckey); // Logically delete a record by key
                     break;
                 case 3:
-                    int reckey2 ;
                     system("cls");
                     printCentered("Enter the key of the record that you want to physically delete : \n");
                     printf("\033[1A\033[63C"); 
@@ -608,7 +607,6 @@ void TOVS(){
                     physicalDelete_TOVS(tovsFile ,reckey2); // Physically delete a record by key
                     break;
                 case 4:
-                    int reckey3 ;
                     system("cls");
                     printCentered("Enter the key of the record you want to search for : \n");
                     printf("\033[1A\033[63C"); 
@@ -621,7 +619,6 @@ void TOVS(){
                     Display_Header_TOVS(tovsFile); // Display the file header
                     break;
                 case 6:
-                    int Blocknum ;
                     system("cls");
                     printCentered("Enter the number of the block you want to display : \n");
                     scanf("%d" , &Blocknum );

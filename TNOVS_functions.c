@@ -670,7 +670,7 @@ void TnOVS() {
     // Main infinite loop for the menu system
     while (1) {
         display_TnOVS_Menu(choice);  // Display the menu with the current choice highlighted
-
+        int reckey ,reckey2,reckey3 ,Blocknum;
         key = getch();  // Get a key press from the user
 
         if (key == 224) {  // Handle special keys (arrows for navigation)
@@ -713,7 +713,7 @@ void TnOVS() {
                     insertRecord_TnOVS(tnovsFile, rec);  // Insert the record into the file
                     break;
                 case 2:  // Logically delete a record from the file
-                    int reckey;
+                    
                     system("cls");  // Clear the screen
                     printCentered("Enter the key of the record that you want to logically delete : \n");
                     printf("\033[1A\033[63C");
@@ -722,7 +722,6 @@ void TnOVS() {
                     removeDuplicates_TnOVS(tnovsFile);  // Remove duplicates after deletion
                     break;
                 case 3:  // Physically delete a record from the file
-                    int reckey2;
                     system("cls");  // Clear the screen
                     printCentered("Enter the key of the record that you want to physically delete : \n");
                     printf("\033[1A\033[63C");
@@ -731,7 +730,6 @@ void TnOVS() {
                     removeDuplicates_TnOVS(tnovsFile);  // Remove duplicates after deletion
                     break;
                 case 4:  // Search for a record by key
-                    int reckey3;
                     system("cls");  // Clear the screen
                     printCentered("Enter the key of the record that you want to Search about : \n");
                     printf("\033[1A\033[63C");
@@ -744,7 +742,6 @@ void TnOVS() {
                     Display_Header_TnOVS(tnovsFile);  // Display header information
                     break;
                 case 6:  // Display the contents of a specific block
-                    int Blocknum;
                     system("cls");  // Clear the screen
                     printCentered("Enter the Number of the block that you want to display its content : \n");
                     scanf("%d", &Blocknum);  // Input the block number to display
